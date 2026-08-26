@@ -46,7 +46,7 @@ The four-qubit model therefore has `2 * (15 + 3) = 36` quantum parameters plus a
 - Parameter initialization: normal standard deviation `0.05`
 - Loss: training-fold positive-weighted BCE with logits
 - Checkpoint: minimum validation BCE
-- Tuning rank: mean validation AUROC across the configured seeds
+- Tuning rank: validation AUROC on the first configured, preregistered tuning seed; the selected settings are then benchmarked across every configured seed
 
 The shallow, locally shared design limits expressivity and simulator cost deliberately. Gradient norm and variance are recorded every epoch to expose flat or unstable optimization.
 

@@ -54,6 +54,11 @@ Supported configuration includes dataset and split limits, class-balanced subsam
 
 Official BreastMNIST validation and test partitions are never replaced. Integer limits select deterministic stratified subsets within each official partition. WDBC uses repeated stratified outer folds and a train-only inner validation split.
 
+The tuning command uses the first configured seed as a fixed search seed and ranks
+candidates on validation AUROC only; it records `test_set_evaluated: false`. Apply
+the selected values with `--set` in a subsequent benchmark so every configured
+seed is evaluated once on the untouched test split.
+
 ## Artifacts
 
 Each deterministic run ID has its own folder below `results/qcnn_breast_cancer/runs/`:
