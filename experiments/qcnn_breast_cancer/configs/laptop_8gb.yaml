@@ -1,0 +1,14 @@
+train_size: 256
+validation_size: full
+test_size: full
+qubits: 4
+reduced_features: 4
+epochs: 30
+image_epochs: 40
+batch_size: 16
+image_batch_size: 16
+early_stopping_patience: 6
+seeds: [17, 42, 73]
+num_workers: 0
+pretrained_download: true
+models: [qcnn, logistic, linear_svm, rbf_svm, random_forest, reduced_mlp, small_cnn, resnet18_imagenet, mobilenet_v3_small_imagenet]

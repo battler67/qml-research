@@ -94,3 +94,24 @@ tests/                   Fast correctness and scientific-integrity checks
 
 See `research/experiment-protocol.md` for the pre-registered comparison rules and
 `research/qml-mvp-recommendation.md` for the evidence-gated Phase 2 decision.
+
+## QCNN breast-ultrasound experiment
+
+The dedicated `feature/qcnn-breast-cancer` experiment adds a genuine hierarchical
+four-/eight-qubit QCNN for BreastMNIST malignant-versus-normal/benign image
+classification. It includes leakage-matched classical baselines, a native CNN,
+pinned ImageNet transfer-learning benchmarks, and WDBC as a diagnostic tabular
+control.
+
+Install the optional stack with `pip install -r requirements-qcnn.txt` (or the
+exact verified `requirements-qcnn-lock.txt`), then start with:
+
+```powershell
+qml-research qcnn research verify
+qml-research qcnn data prepare --profile smoke
+qml-research qcnn run --profile smoke
+```
+
+All training sizes and hyperparameters are under
+`experiments/qcnn_breast_cancer/configs/`. See its `docs/reproduction.md` for laptop,
+full-dataset, high-memory, tuning, noise, inference, and future-hardware commands.

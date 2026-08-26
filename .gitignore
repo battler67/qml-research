@@ -16,6 +16,11 @@ data/raw/*
 results/checkpoints/
 *.joblib
 *.pkl
+data/raw/medmnist/
+# QCNN runs contain generated reports, figures, manifests, and model state.
+results/qcnn_breast_cancer/
+*.pt
+*.pth
 
 # Editors and operating systems.
 .vscode/

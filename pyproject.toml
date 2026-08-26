@@ -27,6 +27,13 @@ dev = [
   "pytest-cov>=5,<8",
   "ruff>=0.9,<1",
 ]
+qcnn = [
+  "medmnist==3.0.2",
+  "Pillow>=12,<13",
+  "psutil>=7,<8",
+  "torch==2.13.0",
+  "torchvision==0.28.0",
+]
 
 [project.scripts]
 qml-research = "qml_research.cli:main"
@@ -41,6 +48,7 @@ markers = [
   "online: requires network access to an authoritative dataset source",
   "quantum: executes PennyLane circuits",
   "slow: executes a research-scale experiment",
+  "qcnn: executes the QCNN experiment",
 ]
 
 [tool.ruff]
@@ -52,4 +60,3 @@ select = ["E", "F", "I", "UP", "B", "SIM"]
 
 [tool.ruff.format]
 quote-style = "double"
-

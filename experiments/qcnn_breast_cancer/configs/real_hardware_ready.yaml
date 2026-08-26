@@ -1,0 +1,13 @@
+train_size: 64
+validation_size: 32
+test_size: 64
+models: [qcnn]
+qubits: 4
+reduced_features: 4
+shots: 1024
+backend: hardware_export
+gradient_method: parameter-shift
+epochs: 0
+seeds: [42]
+real_hardware_provider: null
+real_hardware_submit: false

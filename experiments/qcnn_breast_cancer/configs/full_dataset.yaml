@@ -1,0 +1,9 @@
+train_size: full
+validation_size: full
+test_size: full
+epochs: 60
+image_epochs: 60
+early_stopping_patience: 10
+seeds: [7, 17, 42, 73, 101]
+pretrained_download: true
+models: [qcnn, logistic, linear_svm, rbf_svm, random_forest, reduced_mlp, small_cnn, resnet18_random, resnet18_imagenet, mobilenet_v3_small_imagenet]

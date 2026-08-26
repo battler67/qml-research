@@ -1,0 +1,12 @@
+train_size: full
+validation_size: full
+test_size: full
+models: [qcnn]
+backend: default.mixed
+gradient_method: parameter-shift
+shots: 1024
+noise_enabled: true
+noise_probabilities: [0.0, 0.001, 0.005, 0.01]
+shot_values: [128, 512, 1024, 4096]
+epochs: 0
+seeds: [7, 17, 42, 73, 101]

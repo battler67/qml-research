@@ -1,0 +1,17 @@
+train_size: full
+validation_size: full
+test_size: full
+reducer: spatial_pool
+reduced_features: 8
+qubits: 8
+stages: 3
+epochs: 100
+image_epochs: 100
+batch_size: 32
+image_batch_size: 64
+early_stopping_patience: 12
+seeds: [7, 17, 42, 73, 101]
+num_workers: 4
+pretrained_download: true
+pretrained_mode: partial_finetune
+models: [qcnn, logistic, linear_svm, rbf_svm, random_forest, reduced_mlp, small_cnn, resnet18_random, resnet18_imagenet, mobilenet_v3_small_imagenet]

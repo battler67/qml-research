@@ -41,6 +41,8 @@ def _parser() -> argparse.ArgumentParser:
     report.add_argument("--results", default="results/raw", type=Path)
     report.add_argument("--tables", default="results/tables", type=Path)
     report.add_argument("--research", default="research", type=Path)
+    qcnn = commands.add_parser("qcnn", help="hierarchical QCNN breast-cancer benchmark")
+    qcnn.add_argument("qcnn_args", nargs=argparse.REMAINDER)
     return parser
 
 
@@ -75,6 +77,10 @@ def main(argv: Sequence[str] | None = None) -> int:
             key: str(path)
             for key, path in generate_reports(args.results, args.tables, args.research).items()
         }
+    elif args.command == "qcnn":
+        from qml_research.qcnn.cli import dispatch
+
+        result = dispatch(args.qcnn_args)
     else:  # pragma: no cover - argparse enforces a known command
         raise AssertionError(args.command)
     print(json.dumps(result, indent=2, sort_keys=True))

@@ -1,0 +1,64 @@
+experiment_name: qcnn_breast_cancer
+dataset: breastmnist
+dataset_version: "3.0.2"
+data_dir: data/raw/medmnist
+output_dir: results/qcnn_breast_cancer
+train_size: full
+validation_size: full
+test_size: full
+samples_per_class: null
+stratified: true
+image_size: 28
+reducer: spatial_pool
+reduced_features: 4
+qubits: 4
+encoding: angle_ry
+stages: 2
+convolution: su4_ising
+pooling: unitary_controlled
+models:
+  - qcnn
+  - logistic
+  - linear_svm
+  - rbf_svm
+  - random_forest
+  - reduced_mlp
+  - small_cnn
+backend: lightning.qubit
+gradient_method: adjoint
+shots: null
+noise_enabled: false
+noise_probabilities: []
+shot_values: []
+optimizer: adam
+learning_rate: 0.01
+image_learning_rate: 0.001
+fine_tune_learning_rate: 0.0001
+weight_decay: 0.0001
+batch_size: 16
+image_batch_size: 32
+epochs: 30
+image_epochs: 40
+early_stopping_patience: 6
+class_weighting: balanced
+seeds: [17, 42, 73]
+cv_folds: 5
+num_workers: 0
+precision: float64
+pretrained_download: false
+pretrained_mode: frozen
+threshold_strategy: youden_j
+bootstrap_iterations: 10000
+cache_enabled: true
+expensive_forward_limit: 25000
+expensive_hour_limit: 2.0
+confirm_expensive: false
+real_hardware_provider: null
+real_hardware_submit: false
+tuning_trials: 18
+tuning_space:
+  learning_rate: [0.003, 0.01, 0.03]
+  weight_decay: [0.0, 0.00001, 0.0001]
+  batch_size: [8, 16, 32]
+  init_scale: [0.01, 0.05, 0.1]
+init_scale: 0.05

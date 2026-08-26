@@ -1,0 +1,12 @@
+train_size: 32
+validation_size: 16
+test_size: 32
+models: [qcnn, logistic, reduced_mlp, small_cnn]
+epochs: 2
+image_epochs: 1
+batch_size: 8
+image_batch_size: 8
+early_stopping_patience: 2
+seeds: [7]
+bootstrap_iterations: 200
+pretrained_download: false
