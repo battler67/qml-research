@@ -58,6 +58,7 @@ Profiles and all tunable values live in YAML under `experiments/qcnn_breast_canc
 - Synthetic orchestrator smoke: completed QCNN, logistic, and small-CNN runs with predictions, checkpoints, plots, and aggregate CSVs.
 - BreastMNIST download: official archive MD5 `750601b1f35ba3300ea97c75c52ff8f6` verified; smoke subsets were 32 train, 16 validation, and 32 test without crossing official partitions.
 - Standalone prediction: a saved QCNN checkpoint accepted a PNG and returned probability, threshold, class, run ID, and a non-diagnostic warning.
+- Validation-only tuning smoke: two one-epoch trials completed without evaluating the test set. The selected smoke candidate used batch 16, initialization scale 0.01, learning rate 0.01, and weight decay 0.0001 with validation AUROC 0.625.
 - Noise path: locked BreastMNIST checkpoint evaluated at 128 shots and depolarizing probability 0.01 for 32 recorded circuit executions.
 - Hardware path: produced a four-qubit, 1,024-shot circuit/resource bundle with status `ready_not_submitted`; no provider or QPU was contacted.
 
@@ -79,7 +80,7 @@ The QCNN recorded 36 quantum parameters plus affine scale/bias, 144 circuit exec
 ### Interpretation and remaining work
 
 - The smoke run shows no QCNN predictive advantage and no computational quantum advantage. It is too small for model ranking, and the QCNN was materially slower than the matched classical baselines.
-- Hyperparameter tuning was intentionally not run before functionality passed. The next research run is the configured validation-only search, followed by the `laptop_8gb` or `full_dataset` repeated-seed benchmark on the higher-resource machine.
+- Hyperparameter tuning began only after functionality passed. The two-trial smoke validates test-set isolation but is not a final selection; the next research run is the configured larger validation-only search, followed by the `laptop_8gb` or `full_dataset` repeated-seed benchmark on the higher-resource machine.
 - Confidence intervals from one smoke seed describe test-sample resampling only; advantage testing requires paired repeated seeds/splits and a preregistered difference interval excluding zero.
 - ImageNet models use original-image information and are practical references, not capacity- or representation-matched controls. Published paper numbers remain separate from locally reproduced outputs.
 - All outputs are research-only. BreastMNIST is small and WDBC is diagnostic FNA data; neither establishes screening utility or clinical validity.
