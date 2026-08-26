@@ -1,0 +1,19 @@
+name: wdbc_screen
+dataset: wdbc
+sample_sizes: [100]
+seeds: [42]
+folds: 5
+feature_counts: [2, 4, 6, 8]
+reduction_methods: [pca, mutual_info]
+models: [logistic_regression, linear_svm, rbf_svm, random_forest, qksvm, vqc]
+feature_maps: [angle, iqp]
+vqc_layers: [1, 2]
+vqc_steps: 100
+vqc_batch_size: 16
+optimizer: adam
+learning_rate: 0.05
+backend: default.qubit
+shots: null
+noise_strength: 0.0
+include_full_classical: true
+max_runtime_hours: 8

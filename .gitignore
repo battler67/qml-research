@@ -1,0 +1,24 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Public datasets are fetched from their authoritative sources.
+data/raw/*
+!data/raw/.gitkeep
+!data/raw/*.provenance.json
+
+# Keep normalized evidence, not large transient training state.
+results/checkpoints/
+*.joblib
+*.pkl
+
+# Editors and operating systems.
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

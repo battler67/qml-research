@@ -1,0 +1,218 @@
+{
+  "dataset_provenance": {
+    "citation": "Wolberg, Street and Mangasarian, Wisconsin Diagnostic Breast Cancer; UCI ML Repository",
+    "n_features": 30,
+    "n_samples": 569,
+    "public_non_identifiable": true,
+    "sklearn_version": "1.9.0",
+    "source": "sklearn.datasets.load_breast_cancer"
+  },
+  "experiment": "wdbc_phase1_checkpoint",
+  "fit": {
+    "fixed_hyperparameters": true
+  },
+  "git": {
+    "branch": "qml-research-phase1",
+    "commit": null,
+    "dirty": true
+  },
+  "metrics": {
+    "accuracy": 0.9,
+    "auprc": 1.0,
+    "auroc": 1.0,
+    "balanced_accuracy": 0.9166666666666667,
+    "confusion_matrix": [
+      [
+        5,
+        1
+      ],
+      [
+        0,
+        4
+      ]
+    ],
+    "f1": 0.8888888888888888,
+    "mcc": 0.816496580927726,
+    "precision": 0.8,
+    "precision_recall_curve": {
+      "precision": [
+        0.4,
+        0.4444444444444444,
+        0.5,
+        0.5714285714285714,
+        0.6666666666666666,
+        0.8,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "recall": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.75,
+        0.5,
+        0.25,
+        0.0
+      ],
+      "thresholds": [
+        -1.3997263490969234,
+        -0.8254331969758067,
+        -0.44289235086979745,
+        -0.43372274338271705,
+        -0.2647079630723053,
+        0.03207029054692295,
+        0.12522549368981298,
+        0.2964184660178732,
+        0.32747527102432833,
+        0.5727753350276408
+      ]
+    },
+    "prediction_time_seconds": 0.00041789999522734433,
+    "roc_curve": {
+      "fpr": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "thresholds": [
+        null,
+        0.5727753350276408,
+        0.12522549368981298,
+        -1.3997263490969234
+      ],
+      "tpr": [
+        0.0,
+        0.25,
+        1.0,
+        1.0
+      ]
+    },
+    "sensitivity": 1.0,
+    "specificity": 0.8333333333333334,
+    "training_time_seconds": 0.0035360999972908758
+  },
+  "positive_class": "Malignant breast mass",
+  "predictions": {
+    "y_pred": [
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    "y_score": [
+      0.32747527102432833,
+      0.12522549368981298,
+      -1.3997263490969234,
+      -0.2647079630723053,
+      0.5727753350276408,
+      0.2964184660178732,
+      0.03207029054692295,
+      -0.43372274338271705,
+      -0.8254331969758067,
+      -0.44289235086979745
+    ],
+    "y_true": [
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "quantum_resources": {},
+  "recorded_at": "2026-08-25T18:27:25.633299+00:00",
+  "run": {
+    "dataset": "wdbc",
+    "feature_count": "full",
+    "feature_map": null,
+    "fold": 0,
+    "model": "rbf_svm",
+    "preprocessing": "fold_local_full_feature",
+    "quantum_condition": null,
+    "reduction": "none",
+    "sample_size": 50,
+    "seed": 42,
+    "vqc_layers": null
+  },
+  "run_id": "973c676f74bf44e9",
+  "schema_version": 1,
+  "split": {
+    "test_indices": [
+      13,
+      108,
+      137,
+      242,
+      257,
+      339,
+      376,
+      388,
+      525,
+      559
+    ],
+    "test_size": 10,
+    "train_indices": [
+      30,
+      41,
+      63,
+      81,
+      97,
+      110,
+      119,
+      136,
+      157,
+      172,
+      173,
+      248,
+      251,
+      262,
+      264,
+      284,
+      285,
+      292,
+      337,
+      338,
+      366,
+      391,
+      395,
+      400,
+      414,
+      416,
+      422,
+      435,
+      441,
+      450,
+      462,
+      481,
+      482,
+      484,
+      493,
+      498,
+      541,
+      544,
+      565,
+      566
+    ],
+    "train_size": 40
+  },
+  "status": "completed",
+  "task_description": "Diagnostic classification from digitized fine-needle-aspirate features; not longitudinal or pre-symptomatic early detection"
+}

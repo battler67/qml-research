@@ -1,0 +1,11 @@
+{
+  "doi": "10.24432/C52P4X",
+  "license": "CC BY 4.0",
+  "n_features": 13,
+  "n_samples": 303,
+  "public_non_identifiable": true,
+  "retrieved_at": "2026-08-25T18:23:44.584371+00:00",
+  "sha256": "6843d7c31598a05caa6e0968d6e95d803af235a048f69d5e8f7dd3a80808747e",
+  "source": "UCI Machine Learning Repository dataset 45 via ucimlrepo",
+  "url": "https://archive.ics.uci.edu/dataset/45/heart+disease"
+}

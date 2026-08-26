@@ -1,0 +1,22 @@
+name: wdbc_kernel_noise
+dataset: wdbc
+sample_sizes: [100]
+seeds: [42]
+folds: 5
+fold_limit: 1
+feature_counts: [4]
+reduction_methods: [pca]
+models: [qksvm]
+feature_maps: [angle]
+vqc_layers: [1]
+vqc_steps: 100
+vqc_batch_size: 16
+optimizer: adam
+learning_rate: 0.05
+backend: default.qubit
+shots: null
+noise_strength: 0.01
+quantum_conditions: [ideal, finite_shot, depolarizing]
+finite_shots: 1024
+include_full_classical: false
+max_runtime_hours: 2

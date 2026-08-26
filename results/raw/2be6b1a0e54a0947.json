@@ -1,0 +1,235 @@
+{
+  "dataset_provenance": {
+    "doi": "10.24432/C52P4X",
+    "effective_n_samples": 303,
+    "license": "CC BY 4.0",
+    "n_features": 13,
+    "n_samples": 303,
+    "public_non_identifiable": true,
+    "retrieved_at": "2026-08-25T18:23:44.584371+00:00",
+    "sha256": "6843d7c31598a05caa6e0968d6e95d803af235a048f69d5e8f7dd3a80808747e",
+    "source": "UCI Machine Learning Repository dataset 45 via ucimlrepo",
+    "target_mapping": "0=no disease, values 1-4=disease present",
+    "url": "https://archive.ics.uci.edu/dataset/45/heart+disease"
+  },
+  "experiment": "heart_phase1_checkpoint",
+  "fit": {
+    "fixed_hyperparameters": true
+  },
+  "git": {
+    "branch": "qml-research-phase1",
+    "commit": null,
+    "dirty": true
+  },
+  "metrics": {
+    "accuracy": 0.7,
+    "auprc": 0.6866666666666665,
+    "auroc": 0.6,
+    "balanced_accuracy": 0.7,
+    "confusion_matrix": [
+      [
+        3,
+        2
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    "f1": 0.7272727272727273,
+    "mcc": 0.408248290463863,
+    "precision": 0.6666666666666666,
+    "precision_recall_curve": {
+      "precision": [
+        0.5,
+        0.4444444444444444,
+        0.5,
+        0.5714285714285714,
+        0.6666666666666666,
+        0.6,
+        0.5,
+        0.6666666666666666,
+        0.5,
+        1.0,
+        1.0
+      ],
+      "recall": [
+        1.0,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.6,
+        0.4,
+        0.4,
+        0.2,
+        0.2,
+        0.0
+      ],
+      "thresholds": [
+        -0.5120474627104444,
+        -0.5042626036313598,
+        -0.37894961990483866,
+        -0.20222412292091216,
+        0.03689830208698422,
+        0.06001528358001246,
+        0.06649738244042053,
+        0.2360952727960122,
+        0.5482811521878828,
+        1.0449582958709762
+      ]
+    },
+    "prediction_time_seconds": 0.0007444000002578832,
+    "roc_curve": {
+      "fpr": [
+        0.0,
+        0.0,
+        0.2,
+        0.2,
+        0.4,
+        0.4,
+        1.0,
+        1.0
+      ],
+      "thresholds": [
+        null,
+        1.0449582958709762,
+        0.5482811521878828,
+        0.2360952727960122,
+        0.06649738244042053,
+        0.03689830208698422,
+        -0.5042626036313598,
+        -0.5120474627104444
+      ],
+      "tpr": [
+        0.0,
+        0.2,
+        0.2,
+        0.4,
+        0.4,
+        0.8,
+        0.8,
+        1.0
+      ]
+    },
+    "sensitivity": 0.8,
+    "specificity": 0.6,
+    "training_time_seconds": 0.0028414000043994747
+  },
+  "positive_class": "Heart disease present (original target > 0)",
+  "predictions": {
+    "y_pred": [
+      0,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0
+    ],
+    "y_score": [
+      -0.5120474627104444,
+      1.0449582958709762,
+      -0.37894961990483866,
+      -0.5042626036313598,
+      0.06649738244042053,
+      0.03689830208698422,
+      0.2360952727960122,
+      0.06001528358001246,
+      0.5482811521878828,
+      -0.20222412292091216
+    ],
+    "y_true": [
+      1,
+      1,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      0,
+      0
+    ]
+  },
+  "quantum_resources": {},
+  "recorded_at": "2026-08-25T18:32:34.275045+00:00",
+  "run": {
+    "dataset": "heart",
+    "feature_count": "full",
+    "feature_map": null,
+    "fold": 0,
+    "model": "rbf_svm",
+    "preprocessing": "fold_local_full_feature",
+    "quantum_condition": null,
+    "reduction": "none",
+    "sample_size": 50,
+    "seed": 42,
+    "vqc_layers": null
+  },
+  "run_id": "2be6b1a0e54a0947",
+  "schema_version": 1,
+  "split": {
+    "test_indices": [
+      22,
+      37,
+      49,
+      50,
+      51,
+      97,
+      109,
+      110,
+      171,
+      178
+    ],
+    "test_size": 10,
+    "train_indices": [
+      8,
+      12,
+      15,
+      19,
+      24,
+      25,
+      26,
+      28,
+      30,
+      32,
+      36,
+      41,
+      52,
+      72,
+      90,
+      98,
+      107,
+      108,
+      122,
+      123,
+      135,
+      143,
+      152,
+      170,
+      174,
+      183,
+      188,
+      194,
+      210,
+      238,
+      239,
+      242,
+      258,
+      259,
+      265,
+      274,
+      275,
+      279,
+      283,
+      301
+    ],
+    "train_size": 40
+  },
+  "status": "completed",
+  "task_description": "Cleveland Heart Disease presence-versus-absence classification"
+}

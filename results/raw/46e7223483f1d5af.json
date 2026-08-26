@@ -1,0 +1,254 @@
+{
+  "artifacts": {
+    "circuit_text": "0: \u2500\u256dAngleEmbedding(M0)\u2500\u256dAngleEmbedding(M0)\u2020\u2500\u2524 \u256dProbs\n1: \u2500\u251cAngleEmbedding(M0)\u2500\u251cAngleEmbedding(M0)\u2020\u2500\u2524 \u251cProbs\n2: \u2500\u251cAngleEmbedding(M0)\u2500\u251cAngleEmbedding(M0)\u2020\u2500\u2524 \u251cProbs\n3: \u2500\u2570AngleEmbedding(M0)\u2500\u2570AngleEmbedding(M0)\u2020\u2500\u2524 \u2570Probs\n\nM0 = \n[ 2.96572325 -0.20070252  0.34396355  1.794857  ]",
+    "kernel_matrix": "results/raw/46e7223483f1d5af.kernel.npz"
+  },
+  "dataset_provenance": {
+    "citation": "Wolberg, Street and Mangasarian, Wisconsin Diagnostic Breast Cancer; UCI ML Repository",
+    "n_features": 30,
+    "n_samples": 569,
+    "public_non_identifiable": true,
+    "sklearn_version": "1.9.0",
+    "source": "sklearn.datasets.load_breast_cancer"
+  },
+  "experiment": "wdbc_phase1_checkpoint",
+  "fit": {
+    "fixed_hyperparameters": true
+  },
+  "git": {
+    "branch": "qml-research-phase1",
+    "commit": null,
+    "dirty": true
+  },
+  "kernel_quality": {
+    "diagonal_max_error": 8.881784197001252e-16,
+    "minimum_eigenvalue": 0.0057557836778462795,
+    "negative_eigenvalues": 0,
+    "symmetric_error": 0.0
+  },
+  "metrics": {
+    "accuracy": 0.7,
+    "auprc": 0.8125,
+    "auroc": 0.7916666666666667,
+    "balanced_accuracy": 0.7083333333333333,
+    "confusion_matrix": [
+      [
+        4,
+        2
+      ],
+      [
+        1,
+        3
+      ]
+    ],
+    "f1": 0.6666666666666666,
+    "mcc": 0.408248290463863,
+    "precision": 0.6,
+    "precision_recall_curve": {
+      "precision": [
+        0.4,
+        0.4444444444444444,
+        0.5,
+        0.42857142857142855,
+        0.5,
+        0.6,
+        0.75,
+        0.6666666666666666,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "recall": [
+        1.0,
+        1.0,
+        1.0,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.5,
+        0.5,
+        0.25,
+        0.0
+      ],
+      "thresholds": [
+        -1.3943303815148367,
+        -1.2314409153782817,
+        -0.896072996496576,
+        -0.17493045206627966,
+        -0.16097114487457928,
+        0.2610232634802652,
+        0.42040277202070836,
+        0.42365003105743165,
+        0.5202751128541604,
+        0.7429387625958128
+      ]
+    },
+    "prediction_time_seconds": 0.5522908999992069,
+    "roc_curve": {
+      "fpr": [
+        0.0,
+        0.0,
+        0.0,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.6666666666666666,
+        0.6666666666666666,
+        1.0
+      ],
+      "thresholds": [
+        null,
+        0.7429387625958128,
+        0.5202751128541604,
+        0.42365003105743165,
+        0.42040277202070836,
+        -0.17493045206627966,
+        -0.896072996496576,
+        -1.3943303815148367
+      ],
+      "tpr": [
+        0.0,
+        0.25,
+        0.5,
+        0.5,
+        0.75,
+        0.75,
+        1.0,
+        1.0
+      ]
+    },
+    "sensitivity": 0.75,
+    "specificity": 0.6666666666666666,
+    "training_time_seconds": 1.196480500002508
+  },
+  "positive_class": "Malignant breast mass",
+  "predictions": {
+    "y_pred": [
+      1,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      0
+    ],
+    "y_score": [
+      0.42040277202070836,
+      -0.896072996496576,
+      -1.2314409153782817,
+      -0.17493045206627966,
+      0.7429387625958128,
+      0.5202751128541604,
+      0.2610232634802652,
+      -0.16097114487457928,
+      0.42365003105743165,
+      -1.3943303815148367
+    ],
+    "y_true": [
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "quantum_resources": {
+    "backend": "default.qubit",
+    "circuit_depth": null,
+    "circuit_executions": 1220,
+    "gate_types": {},
+    "noise_strength": 0.0,
+    "num_qubits": 4,
+    "shots": null,
+    "test_kernel_executions": 400,
+    "total_gate_count": null,
+    "train_kernel_executions": 820,
+    "trainable_parameters": 0,
+    "two_qubit_gate_count": null
+  },
+  "recorded_at": "2026-08-25T18:27:29.191696+00:00",
+  "run": {
+    "dataset": "wdbc",
+    "feature_count": 4,
+    "feature_map": "angle",
+    "fold": 0,
+    "model": "qksvm",
+    "preprocessing": "fold_local_quantum_matched",
+    "quantum_condition": "ideal",
+    "reduction": "pca",
+    "sample_size": 50,
+    "seed": 42,
+    "vqc_layers": null
+  },
+  "run_id": "46e7223483f1d5af",
+  "schema_version": 1,
+  "split": {
+    "test_indices": [
+      13,
+      108,
+      137,
+      242,
+      257,
+      339,
+      376,
+      388,
+      525,
+      559
+    ],
+    "test_size": 10,
+    "train_indices": [
+      30,
+      41,
+      63,
+      81,
+      97,
+      110,
+      119,
+      136,
+      157,
+      172,
+      173,
+      248,
+      251,
+      262,
+      264,
+      284,
+      285,
+      292,
+      337,
+      338,
+      366,
+      391,
+      395,
+      400,
+      414,
+      416,
+      422,
+      435,
+      441,
+      450,
+      462,
+      481,
+      482,
+      484,
+      493,
+      498,
+      541,
+      544,
+      565,
+      566
+    ],
+    "train_size": 40
+  },
+  "status": "completed",
+  "task_description": "Diagnostic classification from digitized fine-needle-aspirate features; not longitudinal or pre-symptomatic early detection",
+  "warnings": []
+}

@@ -1,0 +1,218 @@
+{
+  "dataset_provenance": {
+    "citation": "Wolberg, Street and Mangasarian, Wisconsin Diagnostic Breast Cancer; UCI ML Repository",
+    "n_features": 30,
+    "n_samples": 569,
+    "public_non_identifiable": true,
+    "sklearn_version": "1.9.0",
+    "source": "sklearn.datasets.load_breast_cancer"
+  },
+  "experiment": "wdbc_phase1_checkpoint",
+  "fit": {
+    "fixed_hyperparameters": true
+  },
+  "git": {
+    "branch": "qml-research-phase1",
+    "commit": null,
+    "dirty": true
+  },
+  "metrics": {
+    "accuracy": 1.0,
+    "auprc": 1.0,
+    "auroc": 1.0,
+    "balanced_accuracy": 1.0,
+    "confusion_matrix": [
+      [
+        6,
+        0
+      ],
+      [
+        0,
+        4
+      ]
+    ],
+    "f1": 1.0,
+    "mcc": 1.0,
+    "precision": 1.0,
+    "precision_recall_curve": {
+      "precision": [
+        0.4,
+        0.4444444444444444,
+        0.5,
+        0.5714285714285714,
+        0.6666666666666666,
+        0.8,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "recall": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.75,
+        0.5,
+        0.25,
+        0.0
+      ],
+      "thresholds": [
+        -7.905598722342449,
+        -6.536651425825014,
+        -5.504050303790347,
+        -5.196000081230297,
+        -3.7796580866702385,
+        -1.5695909128020566,
+        0.7001290469353147,
+        5.2679001429806025,
+        16.71694491102622,
+        18.888100472866704
+      ]
+    },
+    "prediction_time_seconds": 0.0011755999948945828,
+    "roc_curve": {
+      "fpr": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "thresholds": [
+        null,
+        18.888100472866704,
+        0.7001290469353147,
+        -7.905598722342449
+      ],
+      "tpr": [
+        0.0,
+        0.25,
+        1.0,
+        1.0
+      ]
+    },
+    "sensitivity": 1.0,
+    "specificity": 1.0,
+    "training_time_seconds": 0.002125200000591576
+  },
+  "positive_class": "Malignant breast mass",
+  "predictions": {
+    "y_pred": [
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "y_score": [
+      0.7001290469353147,
+      18.888100472866704,
+      -5.196000081230297,
+      -3.7796580866702385,
+      5.2679001429806025,
+      16.71694491102622,
+      -5.504050303790347,
+      -7.905598722342449,
+      -6.536651425825014,
+      -1.5695909128020566
+    ],
+    "y_true": [
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "quantum_resources": {},
+  "recorded_at": "2026-08-25T18:27:24.406168+00:00",
+  "run": {
+    "dataset": "wdbc",
+    "feature_count": "full",
+    "feature_map": null,
+    "fold": 0,
+    "model": "logistic_regression",
+    "preprocessing": "fold_local_full_feature",
+    "quantum_condition": null,
+    "reduction": "none",
+    "sample_size": 50,
+    "seed": 42,
+    "vqc_layers": null
+  },
+  "run_id": "eb882f46f49eb109",
+  "schema_version": 1,
+  "split": {
+    "test_indices": [
+      13,
+      108,
+      137,
+      242,
+      257,
+      339,
+      376,
+      388,
+      525,
+      559
+    ],
+    "test_size": 10,
+    "train_indices": [
+      30,
+      41,
+      63,
+      81,
+      97,
+      110,
+      119,
+      136,
+      157,
+      172,
+      173,
+      248,
+      251,
+      262,
+      264,
+      284,
+      285,
+      292,
+      337,
+      338,
+      366,
+      391,
+      395,
+      400,
+      414,
+      416,
+      422,
+      435,
+      441,
+      450,
+      462,
+      481,
+      482,
+      484,
+      493,
+      498,
+      541,
+      544,
+      565,
+      566
+    ],
+    "train_size": 40
+  },
+  "status": "completed",
+  "task_description": "Diagnostic classification from digitized fine-needle-aspirate features; not longitudinal or pre-symptomatic early detection"
+}

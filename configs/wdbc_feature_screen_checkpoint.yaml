@@ -1,0 +1,23 @@
+name: wdbc_feature_kernel_checkpoint
+dataset: wdbc
+sample_sizes: [100]
+seeds: [42]
+folds: 5
+fold_limit: 1
+feature_counts: [2, 4, 6, 8]
+reduction_methods: [pca, mutual_info]
+models: [logistic_regression, linear_svm, rbf_svm, random_forest, qksvm]
+feature_maps: [angle, iqp]
+vqc_layers: [1]
+vqc_steps: 100
+vqc_batch_size: 16
+optimizer: adam
+learning_rate: 0.05
+backend: default.qubit
+shots: null
+noise_strength: 0.0
+include_full_classical: false
+max_runtime_hours: 2
+metadata:
+  evidence_scope: exploratory fixed-fold feature and encoding screen
+  limitation: one fold and one seed; VQC depth screen remains in wdbc_screen.yaml

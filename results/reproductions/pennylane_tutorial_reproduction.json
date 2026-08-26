@@ -1,0 +1,40 @@
+{
+  "dataset": "binary Iris sanity check",
+  "fold_local_preprocessing": {
+    "accuracy": 1.0,
+    "circuit_executions": 4725,
+    "kernel_quality": {
+      "diagonal_max_error": 8.881784197001252e-16,
+      "minimum_eigenvalue": 4.196208561541572e-09,
+      "negative_eigenvalues": 0,
+      "symmetric_error": 0.0
+    },
+    "test_shape": [
+      25,
+      75
+    ],
+    "train_shape": [
+      75,
+      75
+    ]
+  },
+  "tutorial_preprocessing_order": {
+    "accuracy": 1.0,
+    "circuit_executions": 4725,
+    "kernel_quality": {
+      "diagonal_max_error": 8.881784197001252e-16,
+      "minimum_eigenvalue": 4.2223460239772875e-09,
+      "negative_eigenvalues": 0,
+      "symmetric_error": 0.0
+    },
+    "test_shape": [
+      25,
+      75
+    ],
+    "train_shape": [
+      75,
+      75
+    ]
+  },
+  "warning": "Perfect accuracy is not medical evidence or quantum advantage."
+}
