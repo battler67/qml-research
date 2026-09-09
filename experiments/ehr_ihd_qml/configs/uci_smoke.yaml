@@ -1,0 +1,62 @@
+experiment:
+  name: ehr_ihd_qml
+  track: uci_diagnostic
+  mode: smoke
+  profile: laptop_8gb
+  seed: 42
+  output_dir: results/ehr_ihd_qml
+data:
+  source: uci_official
+  cohort: cleveland
+  target: num_binary
+  split: [0.70, 0.15, 0.15]
+resources:
+  memory_limit_gb: 5.5
+  max_runtime_minutes: 30
+  max_kernel_evaluations: 20000
+  bounded_parallelism: true
+feature_selection:
+  method: consensus
+  consensus_method: rank_average
+  n_features: 4
+quantum:
+  features: 4
+  layers: 1
+  backend: statevector
+  shots: null
+  real_hardware_submit: false
+qsvm:
+  model: oqsvm
+  feature_map: pauli
+  paulis: [Z, ZZ]
+  feature_map_reps: 2
+  entanglement: linear
+  C: 1.0
+  C_candidates: [0.1, 1.0]
+  psd_correction: true
+  kernel_centering: false
+qmlp:
+  learning_rate: 0.01
+  weight_decay: 0.0001
+  dropout: 0.0
+  init_scale: 0.05
+  entanglement: linear
+  early_stopping_patience: 2
+  loss: bce_logits
+models:
+  classical: [logistic, linear_svm, rbf_svm, random_forest, classical_mlp]
+  qmlp_variants:
+    - name: hqmlp_preferred
+      ansatz: ry_rz_cnot
+      loss: bce_logits
+    - name: hqmlp_paper_ablation
+      ansatz: u3_cnot
+      loss: mse_paper_ablation
+training:
+  quantum_train_limit: 50
+  qmlp_epochs: 3
+  tuning_trials: 2
+  bootstrap_iterations: 200
+evaluation:
+  threshold_strategy: youden_j
+  calibration: platt_validation_only

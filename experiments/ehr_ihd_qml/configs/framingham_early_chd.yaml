@@ -1,0 +1,35 @@
+experiment:
+  name: ehr_ihd_qml
+  track: framingham_early_prediction
+  mode: smoke
+  profile: laptop_8gb
+  seed: 42
+  output_dir: results/ehr_ihd_qml
+data:
+  source: nhlbi_biolincc_teaching
+  expected_local_path: data/raw/framingham/fhs_longitudinal.csv
+cohort:
+  index_period: 1
+  exclude_prevalent_chd: true
+outcome:
+  endpoint: anychd
+  event_time: timechd
+  horizon_days: 3652.5
+  censoring: exclude_incomplete_binary
+resources:
+  memory_limit_gb: 5.5
+  max_kernel_evaluations: 20000
+feature_selection:
+  method: consensus
+  consensus_method: rank_average
+  n_features: 10
+model_selection:
+  primary_metric: validation_auprc
+quantum:
+  features: 10
+  layers: 1
+  backend: statevector
+  real_hardware_submit: false
+qmlp:
+  loss: bce_logits
+  entanglement: linear

@@ -1,0 +1,50 @@
+experiment:
+  name: ehr_ihd_qml
+  track: uci_diagnostic
+  mode: workstation_benchmark
+  profile: workstation_24gb
+  seed: 42
+  output_dir: results/ehr_ihd_qml
+resources:
+  memory_limit_gb: 20.0
+  max_runtime_minutes: 720
+  max_kernel_evaluations: 150000
+  bounded_parallelism: true
+feature_selection:
+  method: consensus
+  consensus_method: rank_average
+  n_features: 10
+quantum:
+  features: 10
+  layers: 3
+  backend: statevector
+  shots: null
+  real_hardware_submit: false
+qsvm:
+  feature_map: pauli
+  feature_map_reps: 2
+  entanglement: circular
+  C: 1.0
+qmlp:
+  learning_rate: 0.003
+  weight_decay: 0.0001
+  dropout: 0.1
+  init_scale: 0.05
+  entanglement: circular
+  loss: bce_logits
+models:
+  classical: [logistic, linear_svm, rbf_svm, random_forest, extra_trees, hist_gradient_boosting, classical_mlp]
+  qmlp_variants:
+    - name: hqmlp_preferred
+      ansatz: ry_rz_cnot
+      loss: bce_logits
+    - name: hqmlp_paper_ablation
+      ansatz: u3_cnot
+      loss: mse_paper_ablation
+training:
+  quantum_train_limit: 300
+  qmlp_epochs: 60
+  seeds: [11, 17, 42, 73, 101]
+  bootstrap_iterations: 5000
+evaluation:
+  threshold_strategy: max_f2

@@ -22,6 +22,11 @@ can later be integrated without importing research-only orchestration.
 
 ## Setup (Windows PowerShell)
 
+For a fresh clone on the 24 GB laptop, follow
+[the laptop handoff](docs/LAPTOP_24GB_SETUP.md). The complete experiment summary
+and configuration limitations are in
+[the experiment roadmap](specs/QML_EXPERIMENTS_AND_24GB_ROADMAP.md).
+
 ```powershell
 py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install --upgrade pip

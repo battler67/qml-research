@@ -1,0 +1,51 @@
+experiment:
+  name: ehr_ihd_qml
+  track: uci_diagnostic
+  mode: validation_only_tuning
+  profile: laptop_8gb
+  seed: 42
+  output_dir: results/ehr_ihd_qml
+resources:
+  memory_limit_gb: 5.5
+  max_kernel_evaluations: 20000
+quantum:
+  features: 4
+  layers: 1
+  backend: statevector
+  real_hardware_submit: false
+qmlp:
+  loss: bce_logits
+  entanglement: linear
+search:
+  strategy: random
+  primary_objective: validation_auprc
+  secondary_objective: validation_auroc
+  max_trials: 18
+  timeout_minutes: 120
+  seed: 42
+feature_selection:
+  method: [mutual_info, rfe_logistic, consensus, clinical_fixed]
+  n_features: [4, 6, 8, 10]
+qsvm:
+  feature_map: [pauli, zz]
+  paulis:
+    - [Z, ZZ]
+    - [X, Y, Z]
+    - [X, Y, Z, ZZ]
+  reps: [1, 2, 3]
+  entanglement: [linear, circular]
+  C: [0.1, 1.0, 10.0]
+  psd_correction: [true, false]
+  kernel_centering: [true, false]
+qmlp_search:
+  quantum_features: [4, 6, 8, 10]
+  quantum_layers: [1, 2, 3]
+  encoding: [angle, pauli]
+  ansatz: [ry_rz_cnot, u3_cnot]
+  entanglement: [linear, circular]
+  learning_rate: [0.001, 0.003, 0.01]
+  weight_decay: [0.0, 0.00001, 0.0001]
+  batch_size: [8, 16, 32]
+  dropout: [0.0, 0.1, 0.2]
+  init_scale: [0.01, 0.05, 0.1]
+  loss: [bce_logits, mse_paper_ablation]

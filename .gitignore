@@ -1,4 +1,7 @@
 .venv/
+.env
+.env.*
+!.env.example
 __pycache__/
 *.py[cod]
 *.egg-info/
@@ -19,6 +22,7 @@ results/checkpoints/
 data/raw/medmnist/
 # QCNN runs contain generated reports, figures, manifests, and model state.
 results/qcnn_breast_cancer/
+results/ehr_ihd_qml/
 *.pt
 *.pth
 
