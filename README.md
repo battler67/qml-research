@@ -1,5 +1,7 @@
 # QML Research Phase 1
 
+Latest experiment: [QML innovation, controlled ablations and laptop reproduction](QML_INNOVATION.md).
+
 This repository evaluates small biomedical quantum-machine-learning experiments
 without assuming that quantum models should win. It compares PennyLane quantum
 kernels and a shallow variational quantum classifier (VQC) with four classical

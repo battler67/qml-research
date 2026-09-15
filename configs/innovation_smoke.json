@@ -1,0 +1,7 @@
+{
+  "name": "gated_residual_ckd_smoke_v2",
+  "seeds": [42], "qubits": 4, "trials_per_family": 2,
+  "epochs": 4, "patience": 4, "batch_size": 32,
+  "train_cap": 96, "validation_cap": 48,
+  "allow_test": false, "bootstrap_draws": 400
+}

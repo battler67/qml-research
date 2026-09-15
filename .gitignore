@@ -1,4 +1,8 @@
 .venv/
+.tools/
+results/laptop/
+results/campaign/
+results/innovation/
 .env
 .env.*
 !.env.example

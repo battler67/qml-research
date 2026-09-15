@@ -1,0 +1,20 @@
+name: laptop_wdbc_training
+dataset: wdbc
+sample_sizes: [200, full]
+seeds: [42]
+folds: 5
+feature_counts: [2]
+reduction_methods: [pca]
+models: [logistic_regression, linear_svm, rbf_svm, random_forest, qksvm, vqc]
+feature_maps: [angle]
+vqc_layers: [2]
+vqc_steps: 300
+vqc_batch_size: 16
+optimizer: adam
+learning_rate: 0.01
+backend: default.qubit
+shots: null
+noise_strength: 0.0
+include_full_classical: true
+max_runtime_hours: 3
+output_dir: results/laptop/phase1

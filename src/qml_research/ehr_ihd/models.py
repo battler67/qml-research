@@ -208,7 +208,7 @@ class HybridQMLP(nn.Module):
         @qml.qnode(self.device, interface="torch", diff_method="backprop")
         def circuit(features: torch.Tensor, weights: torch.Tensor) -> tuple[Any, ...]:
             for wire in range(qubits):
-                qml.RY(features[wire], wires=wire)
+                qml.RY(features[..., wire], wires=wire)
             for layer in range(layers):
                 for wire in range(qubits):
                     if ansatz == "u3_cnot":
@@ -225,12 +225,8 @@ class HybridQMLP(nn.Module):
         self.qnode = circuit
 
     def quantum_expectations(self, values: torch.Tensor) -> torch.Tensor:
-        outputs = []
-        for sample in values:
-            self.forward_circuit_evaluations += 1
-            result = self.qnode(sample, self.quantum_weights)
-            outputs.append(torch.stack(list(result)))
-        return torch.stack(outputs)
+        self.forward_circuit_evaluations += len(values)
+        return torch.stack(list(self.qnode(values, self.quantum_weights)), dim=-1)
 
     def forward(self, values: torch.Tensor) -> torch.Tensor:
         values = values.to(dtype=torch.float64)

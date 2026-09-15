@@ -5,7 +5,7 @@ from __future__ import annotations
 from typing import Any
 
 import numpy as np
-from sklearn.metrics import roc_curve
+from sklearn.metrics import roc_auc_score, roc_curve
 
 from qml_research.evaluation.metrics import classification_metrics
 
@@ -71,14 +71,32 @@ def stratified_bootstrap_interval(
             [rng.choice(indices, len(indices), replace=True) for indices in by_class.values()]
         )
         rng.shuffle(sampled)
-        result = evaluate_scores(
-            y_true[sampled],
-            scores[sampled],
-            threshold=threshold,
-            training_time_seconds=0.0,
-            prediction_time_seconds=0.0,
-        )
-        value = result.get(metric)
+        target = y_true[sampled]
+        sampled_scores = scores[sampled]
+        # Preserve the bootstrap draws and threshold; compute only the requested
+        # statistic instead of rebuilding ROC/PR curves and every other metric.
+        if metric == "auroc" and all(len(indices) for indices in by_class.values()):
+            value = float(roc_auc_score(target, sampled_scores))
+        elif metric in {"balanced_accuracy", "sensitivity", "specificity"} and all(
+            len(indices) for indices in by_class.values()
+        ):
+            predictions = sampled_scores >= threshold
+            sensitivity = float(np.mean(predictions[target == 1]))
+            specificity = float(np.mean(~predictions[target == 0]))
+            value = {
+                "balanced_accuracy": (sensitivity + specificity) / 2,
+                "sensitivity": sensitivity,
+                "specificity": specificity,
+            }[metric]
+        else:
+            result = evaluate_scores(
+                target,
+                sampled_scores,
+                threshold=threshold,
+                training_time_seconds=0.0,
+                prediction_time_seconds=0.0,
+            )
+            value = result.get(metric)
         if value is not None and np.isfinite(value):
             values.append(float(value))
     if not values:

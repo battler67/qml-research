@@ -1,0 +1,7 @@
+{
+  "name": "gated_residual_ckd_large_v1",
+  "seeds": [42, 123, 2026, 7, 99], "qubits": 4, "trials_per_family": 12,
+  "epochs": 100, "patience": 15, "batch_size": 32,
+  "train_cap": null, "validation_cap": null,
+  "allow_test": false, "bootstrap_draws": 2000
+}

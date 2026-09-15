@@ -1,0 +1,7 @@
+{
+  "name": "gated_residual_ckd_confirm_v1",
+  "seeds": [42, 123, 2026], "qubits": 4, "trials_per_family": 12,
+  "epochs": 60, "patience": 12, "batch_size": 32,
+  "train_cap": null, "validation_cap": null,
+  "allow_test": true, "bootstrap_draws": 1000
+}

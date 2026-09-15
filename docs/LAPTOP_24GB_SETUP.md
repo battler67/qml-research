@@ -1,5 +1,10 @@
 # Run on the 24 GB laptop
 
+For the prepared laptop checkout, use the [guarded run commands](LAPTOP_GUARDED_RUNS.md).
+They use the isolated `.venv`, leave an 8 GiB system-memory reserve, and stop jobs
+on sampled memory or runtime limits. The direct commands below do not provide
+that watchdog.
+
 Install Git and Python 3.12. Authenticate GitHub with an account that has access
 to the private repository, then run these commands in PowerShell:
 
